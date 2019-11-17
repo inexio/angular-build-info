@@ -1,6 +1,6 @@
 {
     "name": "angular-build-info",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A command line interface to collect information about your current build.",
     "main": "index.js",
     "bin": {
