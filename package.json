@@ -1,0 +1,29 @@
+{
+    "name": "angular-build-info",
+    "version": "1.0.0",
+    "description": "A command line interface to collect information about your current build.",
+    "main": "index.js",
+    "bin": {
+        "angular-build-info": "bin/build-info.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/4dams/angular-build-info.git"
+    },
+    "keywords": [
+        "angular"
+    ],
+    "author": "Juri Adams <juri@4da.ms> (https://4da.ms)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/4dams/angular-build-info/issues"
+    },
+    "homepage": "https://github.com/4dams/angular-build-info#readme",
+    "dependencies": {
+        "moment": "^2.24.0",
+        "signale": "^1.4.0"
+    }
+}
