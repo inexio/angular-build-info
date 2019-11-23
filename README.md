@@ -1,7 +1,11 @@
 ![](https://static.4da.ms/build_info.png)
 
 <p align="center">
+    <a><img src="https://github.com/inexio/angular-build-info/workflows/build/badge.svg"></a>
+</p>
+<p align="center">
     <a><img src="https://img.shields.io/npm/v/angular-build-info"></a>
+    <a><img src="https://img.shields.io/badge/node-v8%2B-brightgreen"></a>
     <a><img src="https://img.shields.io/npm/dt/angular-build-info"></a>
     <a><img src="https://img.shields.io/github/issues/4dams/davinci"></a>
     <a><img src="https://img.shields.io/github/issues-pr/4dams/davinci"></a>
@@ -9,7 +13,7 @@
 
 ## Description
 
-`angular-build-info` is a command line interface to collect information about your current build. It compiles information such as the timestamp when the application was built, the current git user, the hash of the latest commit and the current version from inside your projects `package.json` file.
+**`angular-build-info`** is a command line interface to collect information about your current build. It compiles information such as the timestamp when the application was built, the current git user, the hash of the latest commit and the current version from inside your projects `package.json` file.
 
 Example output of the CLI looks as follows:
 
