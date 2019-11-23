@@ -20,7 +20,7 @@ export const buildInfo = {
     user: "Juri Adams",
     hash: "1e872b5",
     version: "1.1.4",
-    timestamp: "November 15, 2019 16:37:35"
+    timestamp: "November 15, 2019 16:37:35",
 };
 ```
 
@@ -59,22 +59,21 @@ import { environment } from "../environments/environment";
 @Component({
     selector: "app-root",
     templateUrl: "./app.component.html",
-    styleUrls: ["./app.component.css"]
+    styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
     constructor() {
         console.log(
-            `\n%cBuild Info:\n\n%c ❯ Environment: %c${
-                environment.production ? "production 🏭" : "development 🚧"
-            }\n%c ❯ Build Version: ${buildInfo.version}\n ❯ Build Timestamp: ${
-                buildInfo.timestamp
-            }\n ❯ Built by: ${buildInfo.user}\n ❯ Commit: ${buildInfo.hash}\n`,
+            `\n%cBuild Info:\n\n` +
+                `%c ❯ Environment: %c${environment.production ? "production 🏭" : "development 🚧"}\n` +
+                `%c ❯ Build Version: ${buildInfo.version}\n` +
+                ` ❯ Build Timestamp: ${buildInfo.timestamp}\n` +
+                ` ❯ Built by: ${buildInfo.user}\n` +
+                ` ❯ Commit: ${buildInfo.hash}\n`,
             "font-size: 14px; color: #7c7c7b;",
             "font-size: 12px; color: #7c7c7b",
-            environment.production
-                ? "font-size: 12px; color: #95c230;"
-                : "font-size: 12px; color: #e26565;",
-            "font-size: 12px; color: #7c7c7b"
+            environment.production ? "font-size: 12px; color: #95c230;" : "font-size: 12px; color: #e26565;",
+            "font-size: 12px; color: #7c7c7b",
         );
     }
 }

@@ -1,13 +1,15 @@
 {
     "name": "angular-build-info",
     "version": "1.0.2",
-    "description": "A command line interface to collect information about your current build.",
+    "description": "🛠 A command line interface to collect build information for your Angular application.",
     "main": "index.js",
     "bin": {
         "angular-build-info": "bin/build-info.js"
     },
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc",
+        "publish": "npm ci && tsc && npm publish"
     },
     "repository": {
         "type": "git",
@@ -30,5 +32,9 @@
     "dependencies": {
         "moment": "^2.24.0",
         "signale": "^1.4.0"
+    },
+    "devDependencies": {
+        "@types/node": "^12.12.12",
+        "@types/signale": "^1.2.1"
     }
 }
