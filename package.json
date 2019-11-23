@@ -4,7 +4,7 @@
     "description": "🛠 A command line interface to collect build information for your Angular application.",
     "main": "index.js",
     "bin": {
-        "angular-build-info": "bin/build-info.js"
+        "angular-build-info": "bin/angular-build-info.js"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
