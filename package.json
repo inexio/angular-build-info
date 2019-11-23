@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/4dams/angular-build-info.git"
+        "url": "git+https://github.com/inexio/angular-build-info.git"
     },
     "keywords": [
         "angular",
@@ -24,9 +24,9 @@
     "author": "Juri Adams <juri@4da.ms> (https://4da.ms)",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/4dams/angular-build-info/issues"
+        "url": "https://github.com/inexio/angular-build-info/issues"
     },
-    "homepage": "https://github.com/4dams/angular-build-info#readme",
+    "homepage": "https://github.com/inexio/angular-build-info#readme",
     "dependencies": {
         "moment": "^2.24.0",
         "signale": "^1.4.0"
