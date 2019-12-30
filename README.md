@@ -72,12 +72,12 @@ export class AppComponent {
                 `%c ❯ Environment: %c${environment.production ? "production 🏭" : "development 🚧"}\n` +
                 `%c ❯ Build Version: ${buildInfo.version}\n` +
                 ` ❯ Build Timestamp: ${buildInfo.timestamp}\n` +
-                ` ❯ Built by: ${buildInfo.user}\n` +
-                ` ❯ Commit: ${buildInfo.hash}\n`,
+                ` ❯ Build Message: %c${buildInfo.message || "<no message>"}\n`,
             "font-size: 14px; color: #7c7c7b;",
             "font-size: 12px; color: #7c7c7b",
             environment.production ? "font-size: 12px; color: #95c230;" : "font-size: 12px; color: #e26565;",
             "font-size: 12px; color: #7c7c7b",
+            "font-size: 12px; color: #bdc6cf",
         );
     }
 }
