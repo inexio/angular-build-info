@@ -30,7 +30,9 @@
     },
     "homepage": "https://github.com/inexio/angular-build-info#readme",
     "dependencies": {
+        "@types/prompts": "^2.0.3",
         "moment": "^2.24.0",
+        "prompts": "^2.3.0",
         "signale": "^1.4.0"
     },
     "devDependencies": {

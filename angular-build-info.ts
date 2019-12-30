@@ -8,6 +8,7 @@ interface IBuildInfo {
     timestamp?: string; // Timestamp on when the build was made
     user?: string; // Current git user
     version?: string; // `version` from package.json
+    message?: string; // Custom build message
 }
 
 /**
@@ -16,6 +17,7 @@ interface IBuildInfo {
 import { exec } from "child_process";
 import { promises as fs } from "fs";
 import moment from "moment";
+import prompts from "prompts";
 import signale from "signale";
 import { promisify } from "util";
 const execAsync = promisify(exec);
@@ -33,6 +35,7 @@ const opts: string[] = [
     "--no-user", // Don't show git user in build info
     "--no-version", // Don't show package version in build info
     "--no-time", // Don't show timestamp in build info
+    "--no-message", // Don't add build message
 ];
 
 /**
@@ -60,6 +63,15 @@ async function getCommitHash(): Promise<string | undefined> {
     }
 }
 
+async function getBuildMessage(): Promise<string | undefined> {
+    const response = await prompts({
+        type: "text",
+        name: "message",
+        message: "Add build message? (optional)",
+    });
+    return response.message === "" ? undefined : response.message;
+}
+
 async function buildInfo(): Promise<void> {
     signale.start("Collecting build information...");
 
@@ -80,6 +92,10 @@ async function buildInfo(): Promise<void> {
 
     if (!args.includes("--no-user")) {
         build.user = await getGitUser();
+    }
+
+    if (!args.includes("--no-message")) {
+        build.message = await getBuildMessage();
     }
 
     if (!args.includes("--no-version")) {
