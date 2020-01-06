@@ -7,8 +7,8 @@
     <a><img src="https://img.shields.io/npm/v/angular-build-info"></a>
     <a><img src="https://img.shields.io/badge/node-v8%2B-brightgreen"></a>
     <a><img src="https://img.shields.io/npm/dt/angular-build-info"></a>
-    <a><img src="https://img.shields.io/github/issues/4dams/davinci"></a>
-    <a><img src="https://img.shields.io/github/issues-pr/4dams/davinci"></a>
+    <a><img src="https://img.shields.io/github/issues/inexio/angular-build-info"></a>
+    <a><img src="https://img.shields.io/github/issues-pr/inexio/angular-build-info"></a>
 </p>
 
 ## Description
