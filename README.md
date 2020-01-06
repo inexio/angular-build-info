@@ -1,4 +1,4 @@
-![](https://static.4da.ms/build_info.png)
+![](https://i.4da.ms/build_info.png)
 
 <p align="center">
     <a><img src="https://github.com/inexio/angular-build-info/workflows/build/badge.svg"></a>
@@ -85,7 +85,7 @@ export class AppComponent {
 
 This is what the previous code will output in the browser console once you open the app:
 
-![](https://static.4da.ms/build_info_example.png)
+![](https://i.4da.ms/build_info_example.png)
 
 ## Authors
 
