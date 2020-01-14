@@ -1,6 +1,6 @@
 {
     "name": "angular-build-info",
-    "version": "1.0.6",
+    "version": "1.0.5",
     "description": "🛠 A command line interface to collect build information for your Angular application.",
     "main": "index.js",
     "bin": {
@@ -8,8 +8,7 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\"",
-        "build": "tsc",
-        "publish": "npm ci && tsc && npm publish"
+        "build": "tsc"
     },
     "repository": {
         "type": "git",
