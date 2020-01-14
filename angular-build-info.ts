@@ -121,8 +121,9 @@ async function buildInfo(): Promise<void> {
                 ";\n",
         );
         signale.success(`Saved build information to \`${exportPath}\``);
-    } catch {
+    } catch (error) {
         signale.error(`An error occured writing to \`${exportPath}\`, does the path exist?`);
+        signale.error(error);
     }
 }
 
@@ -163,8 +164,9 @@ async function init(): Promise<void> {
         );
         signale.info(`[...] "build": "build-info && ng build --prod", [...]`);
         signale.info("Again, you can find more info on implementing this tool on the main repo.");
-    } catch {
+    } catch (error) {
         signale.error(`An error occured writing to \`${exportPath}\`, does the path exist?`);
+        signale.error(error);
     }
 }
 
@@ -177,6 +179,7 @@ async function displayManual() {
     signale.info("--no-user       Will not add git username to final `build.ts`");
     signale.info("--no-version    Will not add version from `package.json` to `build.ts`");
     signale.info("--no-time       Will not add timestamp to final `build.ts`");
+    signale.info("--no-message    Will not prompt for a build message, leaving it undefined");
 }
 
 /**
