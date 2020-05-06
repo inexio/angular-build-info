@@ -93,4 +93,4 @@ This is what the previous code will output in the browser console once you open 
 
 ## License
 
-This project is underlying the MIT-License. For more information, take a look at this projects LICEMSE.md file.
+This project is underlying the MIT-License. For more information, take a look at this projects [LICENSE.md](LICENSE.md) file.
