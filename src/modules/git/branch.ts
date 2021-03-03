@@ -12,23 +12,34 @@ const getGitBranch = async (verbose?: boolean): Promise<string | null> => {
     if (verbose) signale.scope("git branch").debug(`Executing \`${command}\``);
 
     // Execute Command
-    const { stdout, stderr } = await execAsync(command);
+    try {
+        const { stdout, stderr } = await execAsync(command);
 
-    // Catch Errors
-    if (stderr) {
+        // Catch Errors
+        if (stderr) {
+            signale
+                .scope("git branch")
+                .warn(
+                    `Error fetching git branch, command \`${command}\` failed`
+                );
+            if (verbose) signale.error(stderr);
+
+            return null;
+        }
+
+        if (verbose)
+            signale
+                .scope("git branch")
+                .debug(`Found git branch \`${stdout.replace("\n", "")}\``);
+        return stdout.replace("\n", "") || null;
+    } catch (error) {
         signale
             .scope("git branch")
             .warn(`Error fetching git branch, command \`${command}\` failed`);
-        if (verbose) signale.error(stderr);
+        if (verbose) signale.error(error);
 
         return null;
     }
-
-    if (verbose)
-        signale
-            .scope("git branch")
-            .debug(`Found git branch \`${stdout.replace("\n", "")}\``);
-    return stdout.replace("\n", "") || null;
 };
 
 export default getGitBranch;

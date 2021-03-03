@@ -12,25 +12,37 @@ const getGitCommitHash = async (verbose?: boolean): Promise<string | null> => {
     if (verbose) signale.scope("git commit").debug(`Executing \`${command}\``);
 
     // Execute Command
-    const { stdout, stderr } = await execAsync(command);
+    try {
+        // Execute Command
+        const { stdout, stderr } = await execAsync(command);
 
-    // Catch Errors
-    if (stderr) {
+        // Catch Errors
+        if (stderr) {
+            signale
+                .scope("git commit")
+                .warn(
+                    `Error fetching latest commit, command \`${command}\` failed`
+                );
+            if (verbose) signale.error(stderr);
+
+            return null;
+        }
+
+        if (verbose)
+            signale
+                .scope("git commit")
+                .debug(`Found latest commit \`${stdout.replace("\n", "")}\``);
+        return stdout.replace("\n", "") || null;
+    } catch (error) {
         signale
             .scope("git commit")
             .warn(
                 `Error fetching latest commit, command \`${command}\` failed`
             );
-        if (verbose) signale.error(stderr);
+        if (verbose) signale.error(error);
 
         return null;
     }
-
-    if (verbose)
-        signale
-            .scope("git commit")
-            .debug(`Found latest comit \`${stdout.replace("\n", "")}\``);
-    return stdout.replace("\n", "") || null;
 };
 
 export default getGitCommitHash;
