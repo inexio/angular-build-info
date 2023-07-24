@@ -1,6 +1,6 @@
 {
     "name": "angular-build-info",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "🛠 A CLI to generate an easily importable `build.ts` file containing various details about the application build",
     "main": "index.js",
     "bin": {

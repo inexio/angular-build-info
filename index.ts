@@ -20,9 +20,9 @@ import write from "./src/lib/write";
 
     // Generate `build` object
     const build: Build = {};
-
+    const path = args.path || "src/build.ts" ;
     build.version = await version();
-    build.timestamp = new Date().toString();
+    build.timestamp = new Date().toUTCString();
     build.message =
         args.message || (args.message === "" ? await message() : null);
     build.git = args.noGit
@@ -35,7 +35,7 @@ import write from "./src/lib/write";
           };
 
     // Write Build information to file
-    await write(build);
+    await write(build, path);
 
     console.log("");
     signale.success("Saved Build Information");
