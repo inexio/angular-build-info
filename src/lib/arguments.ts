@@ -20,6 +20,11 @@ const args = yargs(process.argv)
         type: "string",
         description: "Specify a build message",
     })
+    .option("path", {
+        alias: "p",
+        type: "string",
+        description: "Path for build.ts",
+    })    
     .option("no-git", {
         alias: "g",
         type: "boolean",
